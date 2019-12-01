@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Charlyx Daily Report</title>
+</head>
+<body>
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <link rel="stylesheet" type="text/css" href="styles2.css"/>
+            </head>
+            <body>
+                <div id="topmenu">
+                    <div>
+                        <img src="charlyx.jpg" alt="logo">
+                        <h1>Charlyx</h1>
+                    </div>
+                    <div>
+                                  
+                    </div>
+                </div>
+                <div id="main">
+                    <div>
+                        <form>
+                            <div id='input'>
+                                <h1>Log In to Charlyx Group</h1>
+                                <input type="Name" placeholder="Name"><br/>
+                                <input id="password"type="Password" placeholder="Password"><br/>
+                                <button id="button" type="submit"><b>Log In</b></button>
+                            </div>
+                            <div>
+                                
+                                   
+                                
+                               
+                            </div>
+                        </form>
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScs4f16EW8YoVAHNZO_-eFu2tkfQ-2sLzHPg1nAwSxoYIqNZg/viewform?embedded=true" width="100%" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </div>
+                   
+                    <div id="footer">
+                       
+                    </div>
+                </div>
+                <script>
+                    let password = document.querySelector('#password')
+                    let hide = (e) =>{
+                        if (password.value == 'Admin'){
+                            document.querySelector('iframe').style.display='block';
+                            document.querySelector('form').style.display='none';
+                        }else{alert('wrong password')}
+                        e.preventDefault();
+
+                    }
+                    document.querySelector('#button').addEventListener('click',hide)
+                </script>
+            </body>
+        </html>
+    <div>
+        <!-- <section>
+            <p>
+                kindly enter your report through the link provided below
+            </p>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScs4f16EW8YoVAHNZO_-eFu2tkfQ-2sLzHPg1nAwSxoYIqNZg/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </section> -->
+
+
+    </div>
+</body>
+</html>

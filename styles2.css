@@ -1,0 +1,137 @@
+body{
+    background-color:#777;
+    padding:0;
+    margin:0;
+}
+#topmenu{
+    display:flex;
+    justify-content:space-between;
+    padding:0 18.5%;
+    background-color:rgba(74, 231, 42, 0.945);
+
+    margin:0;
+    height: 50px;
+    align-items: center;
+    border-bottom:1px solid rgb(192, 187, 187);
+}
+#topmenu div{
+    display:inherit;
+    
+}
+#topmenu div h1{
+    margin:auto 25px auto 0;
+    color:black;
+    font-size:12px;
+    font-family: sans-serif;
+}
+#topmenu div img{
+    height:45px;
+    margin:auto;
+}
+#topmenu div h1, form h1 {
+    color:rgb(89, 89, 243);
+    font-size:25px;
+    font-family: Geneva;
+} 
+
+#main{
+    width: 63%;
+    background-color:white;
+    padding:20px 0 0 0; 
+    margin:5px auto;
+    border:1px solid rgb(192, 187, 187);
+    overflow:hidden;
+}
+#main div{
+    width:60%;
+    margin-left:16%;
+    padding:0;
+}
+#main div form{
+    width:100%;
+    padding:0;
+  
+}
+#main div form h1{
+    font-family: sans-serif;
+    font-size: 20px;
+}
+#main div form input{
+    background-color: white;
+    border:1px solid rgb(192, 187, 187);
+    margin:7px 0;
+    border-radius: 2px;
+}
+#main div form div{
+    width:100%;
+    margin:25px 0 0 0;
+}
+a,p,button{
+    font-family: sans-serif;
+}
+a{
+    color:rgb(89, 89, 243);
+    text-decoration:none;
+}
+button{
+    background-color: rgb(89, 89, 243);
+    color:white;
+    border-radius: 25px;
+    height:35px;
+    width:20%;
+    border-style: none;
+}
+#main #footer{
+    background-color:rgba(74, 231, 42, 0.945);
+    width:100%;
+    align-self: center;
+    margin: 10px 0 0 0;
+    height:30px;
+    padding:10px 16%;
+    
+}
+#main #footer p a span{
+    font-size: 8px;
+    
+}
+iframe{
+    display:none;
+}
+@media only screen and (max-width: 375px){
+    #topmenu{
+        padding:5% 10%;
+        height: 15px;
+    }
+    #topmenu div h1{
+        font-size:15px
+    }
+    #topmenu div img{
+        height: 35px
+    }
+    #main{
+        width:90%;
+        padding:5px;
+
+    }
+    #main div{
+        width:100%;
+        margin:0 auto;
+        padding:0;
+    }
+    iframe{
+        width:100%;
+    }
+    #input{
+        align-items: center;
+        text-align: center;
+        background-color:rgba(255, 255, 255, 0.616);
+    }
+    #button{
+        height: 25px
+    }
+    form{
+        background-image: url('charlyx.jpg');
+        background-size:100% 150%;
+    }
+
+}
