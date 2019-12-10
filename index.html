@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Charlyx Daily Report</title>
 </head>
 <body>
@@ -27,12 +29,40 @@
                         <form>
                             <div id='input'>
                                 <h1>Log In to Charlyx Group</h1>
-                                <input type="Name" placeholder="Name"><br/>
-                                <input id="password"type="Password" placeholder="Password"><br/>
+                                <input name="username" type="Name" placeholder="Name"><br/>
+                                <input name="password1" id="password1"type="Password" placeholder="Password"><br/>
                                 <button id="button" type="submit"><b>Log In</b></button>
+                                <span><i>Don't have an account yet? <button id="sgUp"><b>Register</b></button></i></span>
                             </div>
-                            <div>
-                                
+                            <div id="signUp">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <input id="firstName" name="firstName" type="text" placeholder="First Name">
+                                        </td>
+                                        <td>
+                                            <input id="lastName" name="lastName" type="text" placeholder="Last Name">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                            <td>
+                                                <input id="email" name="email" type="email" placeholder="Email">
+                                            </td>
+                                            <td>
+                                                <input id="phone" name="phone" type="text" placeholder="Phone">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input id="password" name="password" type="password" placeholder="create password">
+                                            </td>
+                                            <td>
+                                                <input type="password" placeholder="confirm password">
+                                            </td>
+                                        </tr>
+                                </table>
+                                <button id="sub" type="submit"><b>Register</b></button>
+
                                    
                                 
                                
@@ -46,16 +76,40 @@
                     </div>
                 </div>
                 <script>
-                    let password = document.querySelector('#password')
-                    let hide = (e) =>{
-                        if (password.value == 'Admin'){
-                            document.querySelector('iframe').style.display='block';
-                            document.querySelector('form').style.display='none';
-                        }else{alert('wrong password')}
-                        e.preventDefault();
-
-                    }
-                    document.querySelector('#button').addEventListener('click',hide)
+                    $(document).ready(function(){
+                        $('#sgUp').click(
+                            function(e){
+                                e.preventDefault();
+                                $('#signUp').show();
+                                $('#input').hide();
+                            }
+                        )
+                        
+                         $("#button").click(function(e){
+                        e.preventDefault()
+                        if($('#password').val()=='Admin'){
+                        $('iframe').show();
+                          
+                        }else{alert('wrong password')
+                        console.log($('#password').val())}
+                        })
+                    })
+                    
+                     async function handleSubmit(e) {
+                         e.preventDefault();
+                         let firstName=document.querySelector('#firstName').value;
+                         let lastName=document.querySelector('#lastName').value;
+                         let phone = document.querySelector('#phone').value;
+                         let email = document.querySelector('#email').value;
+                         let password = document.querySelector('#password').value;
+                        //  console.log({email,password})
+                         const  url =  `http://localhost:2010/add-user`;
+                             axios.post(url, {firstName, lastName,phone,email,password}).then((response)=>{console.log(response)})
+                            .catch((error)=>{
+                            console.log(error, "did not send request");
+                         })
+                        }
+                         document.querySelector("#sub").addEventListener('click',handleSubmit)
                 </script>
             </body>
         </html>

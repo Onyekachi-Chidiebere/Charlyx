@@ -1,0 +1,12 @@
+POST http://localhost:2010/add-user
+
+Content-Type: application/json
+
+
+{
+    "firstName":"Chidi",
+    "lastName":"Onyekachi",
+    "phone":"08069523639",
+    "password":"Chisi",
+    "email":"onyekachisamuel18@gmail.com",
+}
